@@ -18,6 +18,7 @@ public class Task {
 	@GeneratedValue(strategy = GenerationType.UUID)
 	private UUID id;
 
+	
 	private String title;
 	private String description;
 	private Date dueDate;
@@ -32,6 +33,16 @@ public class Task {
 		this.description = description;
 		this.dueDate = dueDate;
 		this.completed = completed;
+	}
+	
+	
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
 	}
 
 	public String getTitle() {
