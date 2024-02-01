@@ -1,5 +1,6 @@
 package com.leapfinance.todo.service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -36,6 +37,12 @@ public class TodoServiceImp implements TodoService {
 	@Override
 	public void delete(UUID taskId) {
 		taskRepo.deleteById(taskId);
+	}
+
+	@Override
+	public List<Task> getAllTask() {
+		
+		return taskRepo.findAll();
 	}
 
 }

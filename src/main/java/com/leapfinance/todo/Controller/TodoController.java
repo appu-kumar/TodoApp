@@ -1,5 +1,6 @@
 package com.leapfinance.todo.Controller;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -37,6 +38,12 @@ public class TodoController {
 			
 
 		}
+	}
+	
+	@GetMapping("/tasks")
+	public List<Task> getAllTask()
+	{
+	        return todoService.getAllTask();
 	}
 	
 	@GetMapping("/task/{taskId}")

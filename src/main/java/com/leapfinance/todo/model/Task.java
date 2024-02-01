@@ -11,8 +11,7 @@ import jakarta.persistence.Id;
 @Entity
 public class Task {
 
-	// Design a data model for tasks with fields: title, description, due_date,
-	// completed.
+	// Design a data model for tasks with fields: title, description, due_date, completed.
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
