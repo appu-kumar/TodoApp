@@ -2,11 +2,11 @@ package com.leapfinance.todo.Controller;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.leapfinance.todo.model.Task;
 import com.leapfinance.todo.service.TodoService;
 
+@CrossOrigin("*")
 @RestController
 public class TodoController {
 	
@@ -29,6 +30,7 @@ public class TodoController {
 	@PostMapping("/add")
 	public ResponseEntity<Object> addTask(@RequestBody Task task)             // @RequestBody annotation is used for deserialization  means json/xml to java
 	{
+		
 		try {
 			todoService.add(task); // Task info added
 			return new ResponseEntity<>("Task is added successfully", HttpStatus.OK);
@@ -47,7 +49,7 @@ public class TodoController {
 	}
 	
 	@GetMapping("/task/{taskId}")
-	public Object getTaskDetail(@PathVariable("taskId") UUID taskId) {
+	public Object getTaskDetail(@PathVariable("taskId") int taskId) {
 		
 		try
 		{
@@ -66,7 +68,7 @@ public class TodoController {
 	
 	
 	@PutMapping("/task/{taskId}")
-	public ResponseEntity<Object> updateLoadingDetail(@PathVariable("taskId") UUID taskId, @RequestBody Task task) {
+	public ResponseEntity<Object> updateLoadingDetail(@PathVariable("taskId") int taskId, @RequestBody Task task) {
 		try {
 			Optional<Task> opt = todoService.findById(taskId);
 			if (opt.isPresent()) {
@@ -90,7 +92,8 @@ public class TodoController {
 	}
 	
 	@DeleteMapping("/task/{taskId}")
-	public ResponseEntity<Object> deleteLoadingDetail(@PathVariable("taskId") UUID taskId) {
+	public ResponseEntity<Object> deleteLoadingDetail(@PathVariable("taskId") int taskId) {
+		
 		try {
 			Optional<Task> task= todoService.findById(taskId);
 			if (task.isPresent()) {

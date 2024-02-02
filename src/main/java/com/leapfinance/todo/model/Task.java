@@ -1,7 +1,6 @@
 package com.leapfinance.todo.model;
 
 import java.sql.Date;
-import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,8 +13,8 @@ public class Task {
 	// Design a data model for tasks with fields: title, description, due_date, completed.
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
-	private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int  id;
 
 	
 	private String title;
@@ -36,11 +35,11 @@ public class Task {
 	
 	
 
-	public UUID getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

@@ -2,7 +2,6 @@ package com.leapfinance.todo.service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +24,7 @@ public class TodoServiceImp implements TodoService {
 	}
 
 	@Override
-	public Optional<Task> findById(UUID taskId) {
+	public Optional<Task> findById(int taskId) {
 		return taskRepo.findById(taskId);
 	}
 
@@ -35,7 +34,7 @@ public class TodoServiceImp implements TodoService {
 	}
 
 	@Override
-	public void delete(UUID taskId) {
+	public void delete(int taskId) {
 		taskRepo.deleteById(taskId);
 	}
 
