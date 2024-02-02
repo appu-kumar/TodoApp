@@ -28,17 +28,17 @@ Make sure you have the following tools installed:
 
 1. Download the repository: `https://github.com/appu-kumar/TodoApp.git`
 2. Open the repo in Eclipse IDE.
-    2.1 Right click on the TodoApp folder and run as springboot App.
+    2.1 Right-click on the TodoApp folder and run as springboot App.
 
 3. Run the UI.
 
 ## API Endpoints
-baseUrl:http://localhost:8080
-User Endpoints
-POST /add: Create a new task.
-GET /tasks: Retrieve a list of all tasks.
-GET /task/{id}: Retrieve a task by ID.
-DELETE /task/{id}: Delete a task.
+-baseUrl:http://localhost:8080
+-User Endpoints
+1. POST /add: Create a new task.
+2. GET /tasks: Retrieve a list of all tasks.
+3. GET /task/{id}: Retrieve a task by ID.
+4. DELETE /task/{id}: Delete a task.
 
 ## Configuration
 The application uses application.properties for configuration. Users can configure database connection details and other settings.
